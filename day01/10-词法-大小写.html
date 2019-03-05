@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>大小写问题</title>
+</head>
+
+<body>
+    <B>加粗</B>
+    <b>加粗</b>
+
+    <div>全鹏不怕冷</div>
+
+    <script>
+        document.querySelector('div').onclick = function () {
+            document.querySelector('div').innerHTML = '感冒了就爽了';
+            console.log('严格区分大小写');
+        }
+    </script>
+</body>
+
+</html>

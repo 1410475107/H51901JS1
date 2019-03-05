@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>字符串类型</title>
+</head>
+<body>
+    <script>
+        var username = '张靖麟';
+        var age = 18;  //有引号就是字符串类型
+        console.log(username,  age);
+
+        // 使用typeof获取变量类型
+        console.log(typeof age);
+        console.log(typeof username);
+
+        console.log(username.length);
+        //字符串也可以看成数组  暂时了解
+        console.log(username[2]);
+
+        var  str = '我的"字"符串';
+        console.log(str);
+
+        var str1 = "我的'字'符串";
+        console.log(str1);
+
+        var str2 = '\'我\'的"字"符串';
+        console.log(str2);
+
+        var str3 = '\\是转义字符';
+        console.log(str3);
+
+        var str4 = '我是王超， \
+                    我来自西华师范，\
+                    我今年20了';
+
+        console.log(str4);
+        // ES6语法
+        var str5 = `
+                var str4 = '我是王超， \
+                    我来自西华师范，\
+                    我今年20了';   
+            `;
+
+            console.log(str5);
+    </script>
+</body>
+</html>

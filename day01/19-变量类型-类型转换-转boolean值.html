@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>各种类型转布尔值</title>
+</head>
+
+<body>
+    <script>
+        // 使用Boolean
+        var  a = 100;
+        console.log(Boolean(a));//true
+        // 数字0转成boolean时是false
+        var  b = 0;
+        console.log(Boolean(b));//false
+        var c = 0.0;
+        console.log(Boolean(c));//false
+        var d = -0;
+        console.log(Boolean(d));//false
+        // 字符串转boolean
+        var str1 = '你好';
+        console.log(Boolean(str1));//true
+        var str2 = ''; //空字符
+        console.log(Boolean(str2));//false
+        var str3 = ' ';//字符 空格
+        console.log(Boolean(str3));//true
+
+        // null和undefined
+        console.log(Boolean(null));//false
+        console.log(Boolean(undefined));//false
+
+        // [] 空数组  {} 空对象
+        console.log(Boolean([]));//true
+        console.log(Boolean({}));//true
+    </script>
+</body>
+
+</html>

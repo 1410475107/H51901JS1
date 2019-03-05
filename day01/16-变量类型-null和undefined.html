@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>null和undefined类型</title>
+</head>
+<body>
+    <script>
+    console.log(null == undefined); // true
+    console.log(null === undefined); //false
+
+    console.log(typeof null);//object
+    console.log(typeof undefined);//undefined
+
+    // 声明一个变量但是没有赋值，就是undefined
+    var  a;
+    console.log(a);
+    // 当我们需要清空一个值的时候，使用null
+    var b = 0;
+    b = null;
+    console.log(b);
+    </script>
+</body>
+</html>

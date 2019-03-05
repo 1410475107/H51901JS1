@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>类型的转换</title>
+</head>
+<body>
+    <script>
+        var age = '18';
+        console.log(typeof age);
+        // 使用“数字”运算符转  + - * /
+        console.log(age/1);
+        console.log(typeof (age/1));
+        console.log(typeof (age*1));
+        console.log(typeof (age-0));
+        // 加号的使用
+        console.log(typeof (age+0));
+        console.log(age+0+100+9);
+        console.log(age*1+0+100+9);
+
+        // 不常见
+        var a = '123abc';
+        console.log(a*1);//NaN
+
+        console.log(parseInt(a)); //直接把后面的字符过滤掉
+
+        var b = '123.789abc';
+        console.log(parseInt(b)); //只保留整数部分
+        console.log(parseFloat(b));//保留小数部分
+        // 不是数字开头的字符串处理不了
+        var c = '0    123abc';
+        console.log(parseFloat(c));
+
+    </script>
+</body>
+</html>

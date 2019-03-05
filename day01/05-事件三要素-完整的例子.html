@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件三要素</title>
+    <style>
+        .light{
+            width: 100px;
+            height: 100px;
+            background-color: #000;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="light">
+        一个灯
+    </div>
+    <button type="button">开关</button>
+    <script>
+        document.querySelector('button').onclick = function(){
+            // 函数+事件处理  = 事件处理函数
+            // 样式的修改  如果有连接符  去掉 后面的第一个字符 大写
+            document.querySelector('.light').style.backgroundColor = 'yellow';
+            document.querySelector('.light').style.color = '#f09';
+        }
+    </script>
+</body>
+</html>
