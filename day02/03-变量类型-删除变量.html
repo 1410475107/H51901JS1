@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>删除变量</title>
+</head>
+<body>
+    <script>
+    var a = 10;
+    console.log(delete a); //不能直接删除一个变量
+    console.log(a);
+
+    var obj = {a:1, b:2};
+    console.log(delete obj.b);
+    console.log(obj.b);//undefined
+    console.log(obj.c);//undefined
+
+    // js有一个最高级别的对象是 window
+    var c = 100;
+    console.log(window.c);
+    // window.alert(window.c);
+    d = 200;
+    console.log(delete d);
+    console.log(window.d);
+    </script>
+</body>
+</html>

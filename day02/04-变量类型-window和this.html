@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>this</title>
+</head>
+<body>
+    <script>
+        // window  可以使用  this  代替：this  指向  window
+        var c = 90;
+        console.log(window.c);
+        console.log(this.c);
+
+        this.d = 120;
+        console.log(delete d);
+        // console.log(d);  //会报错
+
+        console.log(window  === this);
+    </script>
+</body>
+</html>

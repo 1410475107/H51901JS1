@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组和对象</title>
+</head>
+
+<body>
+    <script>
+        var a = [1, 2, 3]; //数组
+        console.log(a[2]);
+        var b = {
+            a: 1,
+            b: 2
+        }; //对象
+        console.log(typeof a); //object，不是array
+        console.log(typeof b); //object
+        // 空数组和空对象。转成boolean值的时候，是true
+        console.log(Boolean([]));
+        console.log(Boolean({}));
+        // 把数组和对象结合起来使用，是最方便的
+        // var students = ['胡小雯', 20, '张益杰', 20];
+        // JSON   格式的数据
+        var students = [{
+            username: '周治宏',
+            age: 20
+        }, {
+            username: '李虹学',
+            age: 20
+        }, {
+            username: '戴梦瑶',
+            age: 20,
+            tel:'18909098765',
+            scores:[
+                {yuwen:60,math:80,english:90},
+                {yuwen:60,math:86,english:90},
+                {yuwen:60,math:83,english:97}
+            ]
+        }];
+        console.log(students[2].username);
+        console.log(students[0]['username']);
+        students[2].scores[2].math = 100;
+        console.log(students[2].scores[2].math);
+    </script>
+</body>
+
+</html>

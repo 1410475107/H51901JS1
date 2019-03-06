@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组的对比  和  对象的对比</title>
+</head>
+<body>
+    <script>
+        // 基础类型
+        var a = 1;
+        var b = a;
+        console.log(b === a);//true
+        b = 2;
+        console.log(a,b);  //1  2
+        // 数组和对象
+        var arr1 = [1,2,3];
+        var arr2 = arr1;  //地址引用  不是值的复制  指向同一个内存空间 地址  
+        console.log(arr1 === arr2);
+        arr2[2] = 4;
+        arr1[0]  = 8;
+        console.log(arr2);//8  2  4
+        console.log(arr1);//8  2  4
+
+        var obj1 = {a:1};
+        var obj2 = obj1;  //地址引用
+        obj2.b = 2;
+        console.log(obj1, obj2);
+
+        //数组相等判断 是地址引用
+        var arr3 = [1,2,3];
+        var arr4 = [1,2,3];
+        console.log(arr3 == arr4);
+
+        var arr5 = 1;
+        var arr6 = '1';
+        console.log(arr5 ==  arr6);
+        console.log(arr5 ===  arr6);
+
+
+    </script>
+</body>
+</html>
