@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>逻辑运算符</title>
+</head>
+<body>
+    <button class="mydiv">登录</button>
+    <script src="./js/index.js"></script>
+    <script>
+        // &&   ||  !
+        var a = 1;
+        var b = 0;
+        console.log(a && b); 
+        console.log(a || b); 
+
+        var c = 3 || 5;
+        console.log(c);
+
+        var  d = 0 && (e = 6);
+        console.log(d);
+        // console.log(e);
+
+
+        function sum(a, b){
+            //我们应该给参数设置默认值
+            a = a || 0;
+            b = b || 0;
+            return a+b;
+        }
+        console.log(sum(1));
+
+        // 感叹号的使用 !
+        var f = 10; //number
+        console.log(!!f);
+        console.log(typeof !!f);
+
+        
+    </script>
+</body>
+</html>

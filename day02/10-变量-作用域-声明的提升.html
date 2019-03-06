@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>变量提升</title>
+</head>
+
+<body>
+    <script>
+        /*
+        console.log(a);
+        console.log(sum(1,2));
+        var a = 10;
+        function sum(a,b){return a+b}
+        */
+        // 真正在执行的代码顺序
+        var a;
+        var c = 20;
+        function sum(a, b) {
+            console.log(c); //undefined
+            var c = 10; //放到后面
+            return a + b
+        }
+
+        console.log(a);
+        console.log(sum(1, 2));
+        a = 10;
+        /*
+        var i;
+        var a;
+        function a() {
+            ;
+        };
+        console.log(typeof [1, 2]); //object
+        console.log(typeof 'leipeng'); ///string
+        i = true;
+        console.log(typeof i); ///boolean
+        console.log(typeof 1); ///number
+        console.log(typeof a); //function 
+        console.log(typeof a); ///function 
+        console.log(typeof 'true'); ///string
+
+        */
+    </script>
+</body>
+
+</html>

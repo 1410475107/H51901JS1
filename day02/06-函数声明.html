@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数的定义</title>
+</head>
+<body>
+    <script>
+        function fn(){
+            console.log('a');
+        }
+        // 函数的调用  函数名后面带上()表示函数的执行
+        fn();
+
+        //可以定义参数
+        function  c(info){
+            console.log(info);
+        }
+        c('mystring');
+        c('今天星期三');
+        c('明天星期四');
+
+        // 函数是可以带返回值  return 
+        function avg(a, b){
+            c(arguments);
+            var v = (a+b)/2;
+            return v;
+        }
+        c(avg(4,5));
+        c(avg(40,50));
+        c(avg(400,5));
+
+        // 实参多于形参  多余的实参不使用
+        c(avg(400,5,100));
+
+    </script>
+</body>
+</html>

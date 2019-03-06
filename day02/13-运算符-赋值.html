@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>赋值运算符</title>
+</head>
+
+<body>
+    <div>姓名：</div>
+
+    <!-- 购物车里面商品的增减 -->
+    <button class="reduce">减一</button>
+    <div class="car">3</div>
+    <button class="add">加一</button>
+    <script>
+        // =、+=、-=..........
+        var a = 10;
+        var b = '20';
+        a += 10; //  a = a+ 10
+        b += 1; //b = b + 1;
+        console.log(a); //20
+        console.log(b); //201
+
+        var username = '曾秋霞';
+        document.querySelector('div').onclick = function () {
+            document.querySelector('div').innerHTML += username;
+        }
+        // 购物车实现
+        document.querySelector('.add').onclick = function(){
+            // document.querySelector('.car').innerHTML +=1; 
+            ++document.querySelector('.car').innerHTML; 
+        }
+
+        document.querySelector('.reduce').onclick = function(){
+            document.querySelector('.car').innerHTML -= 1;
+        }
+    </script>
+</body>
+
+</html>

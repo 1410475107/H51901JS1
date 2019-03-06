@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数的参数</title>
+</head>
+<body>
+    <script>
+        //var  见名知意  代码自带注释
+        function functionname(param1, param2, param3){
+            console.log(arguments);
+            return param1 + param2 + param3;
+        }
+
+        var a = functionname(1,2,3, 4, 5);
+        console.log(a);
+
+        var arr = [1,2,3,4,5];
+        console.log(arr);
+
+    </script>
+</body>
+</html>
