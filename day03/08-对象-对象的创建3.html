@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象的创建3</title>
+</head>
+<body>
+    <script>
+        // var obj = {};  new Object({});    new Array();  new Date();
+        var a = new Array(1,2,3); //构造函数作为原型
+        var obj = Object.create(a);//实例作为原型
+        console.log(obj);
+
+        var obj1 = Object.create(Array);
+        console.log(obj1);
+    
+    </script>
+</body>
+</html>

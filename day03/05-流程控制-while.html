@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>while循环</title>
+</head>
+<body>
+    <script>
+        var a  = 10;
+        while(a>0){
+            console.log(a);
+            a--;
+        }
+
+        while(a>=10){
+            console.log(a);
+        }
+        //
+        do{
+            console.log(a);
+        }while(a>=10)
+
+
+        /**************************************
+        假设某人有100,000现金。
+        每经过一次路口需要进行一次交费。交费规则为：
+        当他现金大于50,000时每次需要交5%；
+        如果现金小于等于50,000时每次交5,000。
+        请写一程序计算此人可以经过多少次这个路口。
+        **************************************/
+        var money = 100000;  //钱
+        var n = 0;
+        while(money >= 5000){
+            n++;
+            // 修改判断条件
+            if(money > 50000){
+                money *= 0.95; 
+            }else{
+                money -= 5000;
+            }
+        }
+        console.log(n);
+
+    </script>
+</body>
+</html>

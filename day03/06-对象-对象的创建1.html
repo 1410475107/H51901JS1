@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象的创建</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            username: '周治宏',
+            age: 20,
+            say:function (){
+                console.log(`我是${this.username}，我今年${this.age}岁了`);
+            },
+            showme:function(){
+                console.log('我是个低调的人，我要开始自我介绍');
+                this.say();
+            }
+        };
+        console.log(obj);
+        obj.showme();
+
+        for (var a in obj) {
+              console.log(typeof obj[a]);  
+        }
+        // function sum(a, b){
+        //     console.log(a+b);
+        // }
+        // // console.log(window);
+        // window.sum(1,2);
+        // this.sum(2,3);
+        // this的指向问题
+        var a = 100;
+        function fn(){
+            var a = 20;
+            console.log(this.a);
+            this.a = 200;
+        }
+        window.fn();
+        console.log(a);
+        // 使用object创建对象
+        var obj1 = new Object({a:1});
+        console.log(obj1);
+    </script>
+</body>
+
+</html>

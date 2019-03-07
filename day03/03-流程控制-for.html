@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>循环 for</title>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>姓名</td>
+                <td>性别</td>
+                <td>手机号</td>
+                <td>住址</td>
+            </tr>
+        </thead>
+        <tbody>
+           
+        </tbody>
+    </table>
+    <script>
+        for(var a=1;a<=5;a++){
+            console.log(a);
+        }
+
+        for(var b=1;b<=5;b+=2){
+            console.log(b);
+        }
+
+        // 指定的值不输出
+        for(var c=1; c<=20; c++){
+            if(c>15) break;
+            if(!(c%3)) continue;
+            console.log(c);
+        }
+
+        var arr = [1,23,45,6,7,8,90,90,123];
+        for(var i=0; i <arr.length; i++){
+            console.log(arr[i]);
+        }
+
+        for (var c = 1, d = 1; c < 5, d < 8; c++, d++) {
+            console.log(c + d);
+        }
+        //条件修改放到主体里面  小括号里面的两个分号不能省略
+        var e = 0;
+        for (;;) {
+            console.log(e);
+            // 修改判断条件的规则不固定的情况
+            e++;
+            if (e > 5) {
+                break;
+            }
+        }
+        // 循环对象
+        var stu = {username:'全鹏', age:20};
+        for (var a in stu) {
+            console.log(a);
+            console.log(stu[a]);//一定要使用中括号
+        }
+
+        //输出什么？
+        var arr = [];
+        var i = 0;
+        for(arr[i++] in stu);
+        console.log(arr);//['username', 'age']
+        /*
+        公鸡5文钱一只,母鸡3文钱一只,小鸡3只一文钱, 
+        用100文钱买一百只鸡,
+        其中公鸡,母鸡,小鸡都必须要有,
+        问公鸡,母鸡,小鸡要买多少只刚好凑足100文钱
+        */
+    </script>
+</body>
+
+</html>

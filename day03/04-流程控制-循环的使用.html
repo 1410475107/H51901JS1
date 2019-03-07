@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>循环 for</title>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>姓名</td>
+                <td>性别</td>
+                <td>手机号</td>
+                <td>住址</td>
+            </tr>
+        </thead>
+        <tbody>
+           
+        </tbody>
+    </table>
+    <script>
+        // 订单信息管理：
+        // 未付款  1
+        // 待发货  2
+        // 待收货  3
+        // 签收    4
+        // 退款    5
+        // 评价    6
+        // 循环对象 JSON
+        var stu = [{
+                username: '全鹏',
+                gender: 1,
+                tel: '13989890987',
+                add: '磨子桥'
+            },
+            {
+                username: '邢隽',
+                gender: 1,
+                tel: '13989800987',
+                add: '科华北路'
+            },
+            {
+                username: '胡友作',
+                gender: 3,
+                tel: '15689890987',
+                add: '春熙路'
+            },
+            {
+                username: '刘秋月',
+                gender: 2,
+                tel: '15689890987',
+                add: '春熙路'
+            }
+        ];
+        var tr = '';
+        var gender = ['', '帅哥', '美女','保密'];
+        for(var i=0; i < stu.length; i++){
+            tr += `<tr>
+                        <td>${stu[i]['username']}</td>
+                        <td>${gender[stu[i].gender]}</td>
+                        <td>${stu[i].tel}</td>
+                        <td>${stu[i].add}</td>
+                    </tr>`; 
+
+        }
+        document.querySelector('tbody').innerHTML = tr;
+    </script>
+</body>
+
+</html>

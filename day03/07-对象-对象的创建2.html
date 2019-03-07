@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象的创建</title>
+</head>
+<body>
+    <script>
+        // 使用构造函数创建实例
+        var d = new Date();
+        console.log(d);
+        // 获取当前年份
+        console.log(d.getFullYear());  //2019
+        console.log(d.getMonth());//第几个月
+        console.log(d.getDay());//星期的第几天
+        console.log(d.getDate());//本月的第几天
+        console.log(d.valueOf());//时间戳  1970 01  01  00:00:00  到现在的  毫秒数
+        // 数组的定义方式
+        var arr = new Array(1,2,3,4,5,6,7,8);
+        // console.log(arr);  paopao
+        
+        // Array = {
+        //     length:0,
+        //     prototype:{
+        //         pop:function(){},
+        //         join:function(){},
+        //         sum:function(){}
+        //     }
+        // }
+
+        Array.prototype.sum = function(){
+            console.log(this);
+            var s = 0;
+            for(var i=0; i < this.length; i++){
+                s += this[i];
+            }
+            return s;
+        }
+        //求最大值
+        console.log(Array.prototype.max);
+        Array.prototype.max = Array.prototype.max || function(){
+            // var max = -Infinity;
+            // Infinity
+            var max = this[0];
+            for(var i=1; i < this.length; i++){
+                max = this[i]>max?this[i]:max;
+            }
+            return max;
+        }
+        // 创建一个实例对象
+        var arr1 = [1,20,30,8];//数组的实例对象 
+        console.log(arr1.pop());//取出来最后一个值  原始数组被修改
+        console.log(arr1.sum());
+        console.log(arr1.join('-'));//把数组的元素用指定的字符连接起来
+        // 创建另外一个实例对象
+        var arr2 = [2,3,4,5,6,-7];
+        console.log(arr2.sum());
+        console.log(arr2.max());
+
+        // 实例对象的原型的方法都在 __proto__  这个属性之上
+        // 构造函数的原型方法都在 prototype 之上
+        console.log(arr1.__proto__ === Array.prototype);//true  表示指向一个地方
+
+    </script>
+</body>
+</html>
