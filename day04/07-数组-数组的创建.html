@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组的创建</title>
+</head>
+<body>
+    <script>
+        // 最便捷的方式 1
+        var arr1 = [1,2,3,4];
+        console.log(arr1);
+        // 数组的创建  2
+        var arr2 = new Array(1,2,3,4);
+        console.log(arr2);
+        // 创建指定长度的数组
+        var arr3 = new Array(10);
+        arr3[12] = 1;
+        console.log(arr3);
+
+        // 数组的元素支持表达式
+        var y = 9;
+        var arr4 = [y+1, y+''+2, y-90];
+        console.log(arr4);//[10, 92, -81]
+
+        // 稀疏数组
+        [1,2,,,,,4,5,6,,,8]
+    </script>
+</body>
+</html>

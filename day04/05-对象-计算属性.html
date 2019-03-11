@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>计算属性</title>
+</head>
+<body>
+    <script>
+        var obj1 = {
+            birthday:'1997-08-09',
+            username:'邢隽',
+            gender:'帅哥',
+            //使用setter 和 getter让属性成为计算属性
+            get age(){
+                return new Date().getFullYear() - new Date(this.birthday).getFullYear();
+            },
+            set age(birthday){
+                this.birthday = birthday;
+            },
+            scores:[{course:'math', score:90}, {course:'eng', score:89}],
+            total:0,
+            avg:0
+        };
+        console.log(obj1.age);
+        console.log(obj1.birthday);
+        obj1.birthday = '1996-09-09';
+        console.log(obj1.age);
+
+        //通过age修改birthday
+        obj1.age = '1999-09-09';
+        console.log(obj1.age);
+        console.log(obj1.birthday);
+    </script>
+</body>
+</html>

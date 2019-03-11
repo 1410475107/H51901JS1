@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组的元素操作</title>
+</head>
+<body>
+    <script>
+        // Array->构造函数对象
+        var students = ['张益杰', '刘林', '周政宇','李庆发', '朱开猛','白云飞'];
+        //增加： unshift 在第一个位置加入指定的元素 可以一次性插入多个元素
+        students.unshift('刘爱玲', '戴梦瑶', '卢松波');
+        console.log(students);
+
+        // 使用push往数组的尾部添加新的元素
+        students.push('李虹学', '周治宏', '曾秋霞');
+        console.log(students);
+
+        // 删除元素 shift用于第一个元素的删除
+        var s1 = students.shift();
+        console.log(s1);
+        console.log(students);
+
+        // pop删除最后一个元素
+        var s = students.pop();
+        console.log(s); 
+        console.log(students);
+
+        // 指定下标获取对应的元素值
+
+        // 修改对应的元素值
+
+
+    
+    </script>
+</body>
+</html>

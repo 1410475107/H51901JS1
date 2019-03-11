@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>元素的遍历</title>
+</head>
+<body>
+    <script>
+
+        var arr = ['a',1,2,3,4];
+        // 使用长度值循环打印
+        for(var ind = 0; ind < arr.length; ind++){
+            console.log(arr[ind]);
+        }
+        // 使用for...in循环数组  循环出来的是下标
+        for(var i in arr){
+            console.log(arr[i]);
+        }
+        // 使用for...of直接循环出来数组的 元素
+        for(var i of arr){
+            console.log(i);
+        }
+        // 求和的函数  提供多少实参，都可以计算总和 类数组  也可以遍历
+        function sum(){
+            // 把arguments转成真正的数组
+            console.log(arguments);//1,2,3,4
+            var arr = [];
+            for(var j=0; j < arguments.length; j++){
+                arr.push(arguments[j]);
+            }
+            console.log(arr);
+            //---------------
+            var t = 0;
+            for(var n of arguments){
+                t += n;
+            }
+            return t;
+        }
+        console.log(sum(1,2));
+        console.log(sum(1,2,3,4));
+
+    </script>
+</body>
+</html>

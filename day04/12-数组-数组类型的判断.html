@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组类型的判断</title>
+</head>
+<body>
+    <script>
+        var  arr = [1,2];
+        var obj = {username:'王超'};
+        console.log(typeof arr);//object
+        console.log(typeof obj);//object
+        // Array构造函数里面有一个方法：isArray
+        var r = Array.isArray(arr);
+        console.log(r);
+        var r1 = Array.isArray(obj);
+        console.log(r1);
+    </script>
+</body>
+</html>

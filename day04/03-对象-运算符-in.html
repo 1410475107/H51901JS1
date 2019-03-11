@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象相关运算符</title>
+</head>
+<body>
+    
+    <script>
+        var obj = {username:'胡小雯', gender:'女'};
+        console.log(obj);
+        for(var key in obj){
+            console.log(obj[key]);
+        }
+        console.log(obj.username);
+        console.log(obj['username']);
+        // 检查对象里面有没有相关属性
+        console.log('username' in obj);
+        console.log('age' in obj);
+        console.log('toString' in obj);
+        console.log('valueOf' in obj);
+    </script>
+</body>
+</html>

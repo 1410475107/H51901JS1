@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象相关的操作</title>
+</head>
+<body>
+    <h1>随机抽取学生回答问题</h1>
+    <h2>一个伟大的工程师将会出现在这里......</h2>
+    <input type="button" value="抽学生">
+    <script>
+        //Date  时间
+        console.log(new Date().getFullYear());
+        //Math：数学相关  random  0-0.9999999999999999999999999999999999999
+        console.log(Math.random());
+        // 随机返回指定范围的整数  min 表示最小值  max 表示最大值
+        function  random(min, max){
+            return min + parseInt((max-min)*Math.random());
+        }
+        console.log(random(3, 9));
+        // 随机抽选学生的实现
+        var students = [
+            '张益杰', '刘林', '周政宇','李庆发', '朱开猛','白云飞',
+            '邢隽', '全鹏','周治宏','卢松波','曾秋霞',
+            '马祯','王超','胡小雯','张靖麟','薛倩',
+            '李虹学', '戴梦瑶', '刘爱玲', '胡友作', '刘秋月'];
+        document.querySelector('input').onclick = function(){
+            //随机抽选一个学生  随机的是下标
+            var ind = random(0, students.length);
+            console.log(ind);
+            // 然后显示到页面上 h2
+            document.querySelector('h2').innerHTML = students[ind];
+        }
+    </script>
+</body>
+</html>

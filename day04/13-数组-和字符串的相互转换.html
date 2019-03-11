@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组和字符串的相互转换</title>
+</head>
+<body>
+    <script>
+        // 字符串转换成数组
+        var str = '胡小雯,张益杰,王超';
+        //['胡小雯','张益杰','王超']
+        var arr = str.split(',');//使用指定的字符，把字符串分割成数组
+        console.log(arr);
+
+        var str1 = '1 2 3 4 5 6 7 8';
+        var arr1 = str1.split(' ');
+        console.log(arr1);
+
+        // 把数组转换成字符串
+        var arr2 = ['卢松波', '曾秋霞', '周治宏'];
+        console.log(arr2.toString());//使用逗号把数组的元素连接起来
+        console.log(arr2.join('-')); //默认使用逗号，可以指定连接符号
+        //JSON.parse  stringify
+    </script>
+</body>
+</html>

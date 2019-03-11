@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>操作数组的元素</title>
+</head>
+<body>
+    <script>
+        var arr = new Array(1,2,3,4,5);
+        // splice(start, delecount, newv1, new2.......);
+        // 在任意位置添加新的元素
+        arr.splice(2, 0, 'a');
+        console.log(arr);  //[1, 2, "a", 3, 4, 5]
+        //在4和5之间插入  '曾秋霞'  '张益杰'
+        arr.splice(5, 0, '曾秋霞', '张益杰');
+        console.log(arr);//[1, 2, "a", 3, 4, "曾秋霞", "张益杰", 5]
+        //把 张益杰 ---》  刘林
+        arr.splice(6, 1, '刘林');
+        console.log(arr);
+
+        // 删除元素  2
+        arr.splice(1, 1);
+        console.log(arr);
+
+    </script>
+</body>
+</html>
