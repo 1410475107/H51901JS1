@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面试题和知识点复习</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style></style>
+</head>
+<body>
+    <div class="container">
+        <h3>输出内容</h3>
+        <pre>
+            function Foo() {
+                getName = function () { console.log(1); }; 
+                return this;
+            }
+            var getName = function () { console.log(4);};
+            Foo().getName(); 
+            试题解析：
+            函数内部不是用var声明的变量是全局变量；
+            执行到Foo函数的时候，会修改全局变量getName的值；
+        </pre>
+    </div>
+    <script>
+        function Foo() {
+            getName = function () { console.log(1);};
+            console.log(this);
+            return this;
+        }
+        var getName;
+        getName = function () { console.log(4);};
+        window.Foo().getName(); 
+
+    </script>
+</body>
+</html>

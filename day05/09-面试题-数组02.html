@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面试题和知识点复习</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style></style>
+</head>
+<body>
+    <div class="container">
+        <h3>数组的复制</h3>
+        <pre>
+            var num     = [2,3,4,4,6,7,8,4,9,7];
+            var newarr  = [...num];
+            console.log(newarr);
+
+            var arr1 = [];
+            for (var i = 0; i < num.length; i++) {
+                arr1.push(num[i]);
+            }
+            console.log(arr1);
+            实体解析：
+            直接把一个数组赋值给另一个数组，是把引用地址指向同一个空间；
+            如果只是复制值的时候，可以采用循环的方式或者[...数组]的操作方式；
+            [...类数组]可以把一个类数组转换成真正的数组对象；
+        </pre>
+    </div>
+    <script>
+        var num     = [2,3,4,4,6,7,8,4,9,7];
+        var newarr  = [...num];//ES6
+        console.log(newarr);
+
+        var arr1 = [];
+        for (var i = 0; i < num.length; i++) {
+            arr1.push(num[i]);
+        }
+        console.log(arr1);
+
+    </script>
+</body>
+</html>

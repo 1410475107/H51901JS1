@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>得到一个元素的位置</title>
+</head>
+<body>
+    <script>
+    
+        var arr = [4,5,6,7,8,7];
+        console.log(arr.indexOf(7));
+        console.log(arr.lastIndexOf(7));//反向查询元素位置
+        console.log(arr.indexOf(4)); //0 
+        console.log(arr.indexOf(40)); //如果不存在  -1
+
+        // 去除数组中重复的元素
+        var arr1 = ['周治宏', '卢松波', '曾秋霞', '卢松波', '邢隽', '曾秋霞', '全鹏'];
+        function distinct(arr){
+            var newarr = [];
+            for(var a of arr){
+                if(newarr.indexOf(a) == -1){
+                    newarr.push(a);//追加元素到结尾
+                }
+            }
+            return newarr;
+        }
+        console.log(distinct(arr1));//['周治宏', '卢松波', '曾秋霞', '邢隽', '全鹏']
+    </script>
+</body>
+</html>

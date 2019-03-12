@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+li{
+    display: inline-block;
+}
+
+ul.djs li{
+    width: 42px;
+    height: 42px;
+    background-color: #333;
+    text-align: center;
+    line-height: 42px;
+    color: #fff;
+    font-weight: bolder;
+    font-family: 微软雅黑;
+    font-size: 20px;
+}
+

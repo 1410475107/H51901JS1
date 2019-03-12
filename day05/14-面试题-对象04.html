@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面试题和知识点复习</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style></style>
+</head>
+<body>
+    <div class="container">
+        <h3>输出内容</h3>
+        <pre>
+            var name    = 'lili';
+            var obj     = {
+                name: 'liming',
+                prop: {
+                   name: 'ivan',
+                   getname: function() {
+                      return this.name;
+                   }
+                }
+            };
+            console.log(obj.prop.getname());//ivan
+            var test = obj.prop.getname;  
+            console.log(test()); //lili
+            试题解析：
+            谁调用这个方法，this就指向谁；
+        </pre>
+    </div>
+    <script>
+        var name    = 'lili';
+        var obj     = {
+            name: 'liming',
+            prop: {
+               name: 'ivan',
+               getname: function() {
+                  return this.name;
+               }
+            }
+        };
+        console.log(obj.prop.getname());//ivan
+        var test = obj.prop.getname;  
+        console.log(test()); //lili
+    </script>
+</body>
+</html>

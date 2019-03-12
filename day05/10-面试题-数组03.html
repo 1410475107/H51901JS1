@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面试题和知识点复习</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style></style>
+</head>
+<body>
+    <div class="container">
+        <h3>var a = [3,6,2,4,1,5]; 不用系统函数，实现sort 或 reverse 数组颠倒功能</h3>
+        <pre>
+            var a = [3,6,2,4,1,5];
+            for(var i=0,j=0,temp=0;i< a.length;i++){
+                for(j=i+1;j < a.length;j++){
+                    if(a[i] < a[j]){
+                       temp = a[i];
+                       a[i] = a[j];
+                       a[j] = temp;
+                    }
+                }
+           }
+           console.log(a);
+           试题解析：
+           比较相邻的元素。如果第一个比第二个大，就交换他们两个。
+           遍历一遍后，此时最后的元素应该会是最大的数。然后对前n-1个元素进行同样的操作。
+           依次类推。给人感觉就像气泡一个个往上冒似的
+           如果使用系统函数sort()对数组排序，应该注意，给sort传递一个函数作为实参；
+           function(a, b){return a - b;}
+        </pre>
+    </div>
+    <script>
+
+        var arr = [4,5,6,7,8];
+        function  myrev(array){
+            var a = [];
+            for(var item of array){
+                a.unshift(item);
+            }
+            return a;
+        }
+        var r = myrev(arr);//[8,7,6,5,4]
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //方法1.用冒泡排序
+        //   比较相邻的元素。如果第一个比第二个大，就交换他们两个。
+        //   遍历一遍后，此时最后的元素应该会是最大的数。然后对前n-1个元素进行同样的操作。
+        //   依次类推。给人感觉就像气泡一个个往上冒似的
+        var a = [3,6,2,4,1,5];
+        for(var i=0,j=0,temp=0;i<a.length;i++){
+            for(j=i+1;j<a.length;j++){
+                if(a[i]<a[j]){
+                   temp = a[i];
+                   a[i] = a[j];
+                   a[j] = temp;
+                }
+            }
+       }
+       console.log(a);      
+
+
+    </script>
+</body>
+</html>

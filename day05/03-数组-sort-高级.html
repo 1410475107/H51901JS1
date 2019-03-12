@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对数组元素进行排序</title>
+</head>
+
+<body>
+    <script>
+        var stu = [{
+                username: '全鹏',
+                gender: 1,
+                score: 9,
+                age:19,
+                tel: '13989890987',
+                add: '磨子桥'
+            },
+            {
+                username: '邢隽',
+                gender: 1,
+                score: 55,
+                age:16,
+                tel: '13989800987',
+                add: '科华北路'
+            },
+            {
+                username: '胡友作',
+                gender: 3,
+                score: 8,
+                age:16,
+                tel: '15689890987',
+                add: '春熙路'
+            },
+            {
+                username: '刘秋月',
+                gender: 2,
+                score: 61,
+                age:18,
+                tel: '15689890987',
+                add: '春熙路'
+            }
+        ];
+        function score(a, b){
+            return b.score - a.score;
+        }
+        function orderby(by1, order){
+            // asc:升序  desc:降序
+            /*
+            if(order == 'asc'){
+                return function (a, b){
+                    return a[by1] - b[by1]; 
+                }
+            }else{
+                return function (a, b){
+                    return b[by1] - a[by1]; 
+                }
+            }
+            */
+            var c = 1;
+            if(order){c= -1} //当需要升序排列时，需要提供第二个形参  true
+            return function (a, b){
+                return c*(b[by1] - a[by1]); 
+            }
+            
+        }
+        // var results = stu.sort(score);
+        var results = stu.sort(x('age'));
+        console.log(stu);
+        console.log(results);
+
+        // var results1 = stu.sort(orderby('gender'));
+        // console.log(stu);
+        // console.log(results1);
+
+    </script>
+</body>
+
+</html>

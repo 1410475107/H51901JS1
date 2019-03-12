@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>抽奖</title>
+    <style>
+        ul li{
+            width: 80px;
+            height: 80px;border-radius: 50%;
+            border: 2px solid rgb(250, 8, 8);
+            text-align: center;
+            line-height: 80px;
+            font-size: 30px;
+            font-weight: bold;
+            color: red;
+            font-family: 微软雅黑;
+            list-style: none;
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li>01</li>
+        <li>02</li>
+        <li>03</li>
+        <li>04</li>
+        <li>05</li>
+        <li>06</li>
+    </ul>
+
+    <button class="start">开始摇奖</button>
+    <script>
+        var li = document.querySelectorAll('li');
+        document.querySelector('.start').onclick = function(){
+            //1-32  不能重复:使用过的元素不能再用--》去掉--》splice
+            var arr = [];
+            for(var i=1; i < 33; i++){arr.push(i)}
+            var n = 0, liind = 0;
+            function getnum(){
+                //  随机一个下标
+                var ind = parseInt(Math.random()*arr.length);
+                li[liind].innerHTML = arr[ind];
+                n++; 
+                // 摇动10次停止
+                if(n >= 10){
+                    // clearInterval(sid);
+                    //删除固定下来的元素
+                    arr.splice(ind, 1);
+                    console.log(arr);
+                    //当前的球确定，然后是下一个球
+                    liind++;
+                    // 计数器重置
+                    n=0;
+                    // 如果所有的红球全部确定，清除定时器
+                    if(liind >= li.length){
+                        clearInterval(sid);
+                    }
+                }
+            }
+            //使用定时器让数字动起来
+            var sid = setInterval(getnum, 500);
+
+        }
+    </script>
+</body>
+</html>

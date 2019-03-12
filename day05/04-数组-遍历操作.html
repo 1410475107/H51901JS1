@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>遍历操作</title>
+</head>
+<body>
+    <script>
+        var arr = [function(a,b){return a + b;}, 'a', 1,2,3];
+        arr.forEach(function(a, ind, arr1){
+            console.log(a, ind, arr1);
+        });
+        //map
+        var arr1 = [1,2,3];
+        var arr2 = arr1.map(function(v, i, that){
+            that[i] = v*v;
+            return v*v;
+        });
+        console.log(arr1);
+        console.log(arr2);
+
+        //filter():返回数组的子集，是否返回当前元素是根据调用的函数来判断的; 
+        var arr3 = [1,23,56,8,90,67,89,90,35];
+        var even = arr3.filter(function(v){
+            return !(v%2);
+        });
+        console.log(even);
+        // 筛选考试分数低于60的
+        var students = [{username:'胡小雯',score:50},{username:'王超', score:60},{username:'马祯',score:59}];
+        var exam = students.filter(function(s){
+            return s.score < 60;  //语法 糖
+        });
+        console.log(exam);
+        /*
+        every()和some():对数组的所有元素执行函数检查; 区别：
+        every()：当每个元素都返回true是才返回true；  &&
+        some()：当每个元素都返回false才返回false；   ||
+        */
+        var arr4 = [60, 67, 89, 98, 100, 65];
+        var r = arr4.every(function(score){
+            return score >= 60;
+        });
+        console.log(r);
+
+        var r1 = arr4.some(function(score){
+            return score < 55;
+        });
+        console.log(r1);
+    </script>
+</body>
+</html>

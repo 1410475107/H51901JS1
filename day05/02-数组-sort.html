@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对数组元素进行排序</title>
+</head>
+
+<body>
+    <script>
+        // 不提供任何参数，按照字母进行排序
+        var arr = ['xingjun', 'zhouzhihong', 'liuailing', 'zengqiuxia', 'lusongbo'];
+        var arr1 = arr.sort();
+        console.log(arr1);
+        // 对数字进行排序  ，需要提供排序规则参数
+        var arr2 = [10, 1, 2, 3, 20, 6, 9];
+
+        function orderby(a, b) {
+            return a - b; //升序
+        }
+        var arr3 = arr2.sort(orderby);
+        console.log(arr3);
+        // 按照降序来排
+        // function orderby1(a, b) {
+        //     return b - a; //返回>0，降序
+        // }
+        // console.log(arr2.sort(orderby1));
+
+        //打乱数组元素的顺序
+        var arr4 = [10, 2, 3, 6, 8, 90, 203, 67];
+        function randby(a, b){
+            return Math.random()-0.5;
+        }
+        console.log(arr4.sort(randby));
+    </script>
+</body>
+
+</html>

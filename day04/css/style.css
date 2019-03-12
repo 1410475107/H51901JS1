@@ -1,0 +1,24 @@
+*{
+    margin: 0; padding: 0; list-style: none;
+}
+.round{
+    margin: 30px auto;
+    width: 590px;  height: 470px;
+    position: relative;
+}
+ul.img{
+    width: 590px; height: 470px; overflow: hidden;
+}
+ul.point{
+    width: 130px; position: absolute;
+    bottom: 10px; left: 230px;
+}
+ul.point li{
+    width: 15px;
+    height: 15px;
+    /* background-color: #f01; */
+    border: 1px solid rgb(129, 25, 214);
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}

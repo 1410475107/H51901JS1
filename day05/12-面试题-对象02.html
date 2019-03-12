@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面试题和知识点复习</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style></style>
+</head>
+<body>
+    <div class="container">
+        <h3>输出内容</h3>
+        <pre>
+            var getName = function () { console.log (4);};
+            function getName() { console.log (5);}     
+            getName(); //4
+            试题解析：
+            变量或者函数的声明都会提到前面，赋值不会提升；
+            赋值是在所有的变量声明都完成后才会执行；
+        </pre>
+    </div>
+    <script>
+        var getName = function () { console.log (4);};
+        function getName() { console.log (5);}     
+        getName();  
+    </script>
+</body>
+</html>

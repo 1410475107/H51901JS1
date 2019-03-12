@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面试题和知识点复习</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style></style>
+</head>
+<body>
+    <div class="container">
+        <h3>输出内容</h3>
+        <pre>
+            function foo(){
+                foo.a   = function(){console.log(1)}; 
+                this.a  = function(){console.log(2)};
+                a       = function(){console.log(3)};
+                var a   = function(){console.log(4)};
+            }
+
+            foo.prototype.a = function(){console.log(5)};
+            foo.a           = function(){console.log(6)};
+            foo.a();//6 
+
+            var obj = new foo();
+            obj.a(); //2
+            foo.a(); //1 
+            
+            试题解析：
+            原型是指和对象相关连的另外一个对象；
+            每个对象会从原型继承属性和方法；
+            实体对象的原型是构造函数，构造函数的原型是Object内置对象，Object往上就是null了；
+            上面一层层的原型关系就构成了原型链，对象会继承原型链上允许继承的全部属性和方法；
+            对象在调用属性或方法时，首先在自己内部查找对应的属性和方法，找到就结束；
+            如果自己内部找不到，就在原型对象上面找，找到就结束；
+            如果原型对象上找不到，就继续沿着原型的原型往上找，直到找到为止；
+            如果整个原型链上都找不到需要的属性则返回undefined；
+            如果整个原型链上找不到需要的方法，则提示函数不存在，代码报错；
+        </pre>
+    </div>
+    <script>
+        function foo(){
+            foo.a   = function(){console.log(1)}; 
+            this.a  = function(){console.log(2)};
+            a       = function(){console.log(3)};
+            var a   = function(){console.log(4)};
+        }
+
+        foo.prototype.a = function(){console.log(5)};
+        foo.a           = function(){console.log(6)};
+        foo.a();//6 
+
+        var obj = new foo();
+        obj.a(); //2
+        foo.a(); //1   
+    </script>
+</body>
+</html>

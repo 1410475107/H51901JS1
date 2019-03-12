@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面试题和知识点复习</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style></style>
+</head>
+<body>
+    <div class="container">
+        <h3>实现数组去重？</h3>
+        <pre>
+            var num     = [2,3,4,4,6,7,8,4,9,7];
+            var newarr  = [];
+            for (var i = 0; i < num.length; i++) {
+                if(newarr.indexOf(num[i]) == -1){
+                    newarr[newarr.length] = num[i];
+                }
+            }
+            console.log(newarr);
+            试题解析：
+            indexOf方法用于检索一个数组里面是否有对应的元素；
+            如果有，返回对应的索引值，下标从0开始；
+            如果没有，返回-1;
+            可以使用指定下标(数组的长度)、push、unshift等方式把不存在的元素追加到新数组里面；
+        </pre>
+    </div>
+    <script>
+        var num     = [2,3,4,4,6,7,8,4,9,7];
+        var newarr  = [];
+        for (var i = 0; i < num.length; i++) {
+            if(newarr.indexOf(num[i]) == -1){
+                newarr[newarr.length] = num[i];
+            }
+        }
+        console.log(newarr);
+
+    </script>
+</body>
+</html>
