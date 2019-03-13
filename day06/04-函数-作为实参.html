@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数作为参数</title>
+</head>
+<body>
+    <script>
+        function sum(a,b){return a+b;}
+        function sub(a,b){return a-b;}
+        function mul(a,b){return a*b;}
+        function div(a,b){return a/b;}
+
+        function cal(oper, a, b){
+            return oper(a, b);
+        }
+
+        //6+8
+        var r = cal(sum, 6, 8);
+        console.log(r);
+
+        //9*8
+        var r1 = cal(mul, 9, 8);
+        console.log(r1);
+
+        //=(7*6 -4) + (4-5*7)
+        var r3 = cal(sum, sub(mul(7,6),4), sub(4, mul(5,7)));
+        console.log(r3);
+
+        var arr = [function(a, b){return a + b}, 3, 6];
+        var r4 = arr[0](arr[1], arr[2]);
+        console.log(r4);
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数的参数</title>
+</head>
+
+<body>
+    <script>
+        function sum(a, b) {
+
+            if (sum.length > arguments.length) {
+                console.log('实参少于形参');
+            } else if (sum.length < arguments.length) {
+                console.log('实参多于形参');
+            }
+            console.log(a, b);
+            return a + b;
+        }
+        sum(1);
+        sum(1, 2, 3);
+
+        // 输出学生信息
+        function showstu(stu) {
+            return `姓名：${stu.username}，性别：${stu.gender}，年龄：${stu.age}，手机号：${stu.tel}`;
+        }
+
+        var s = showstu('张益杰', '帅哥', 20);
+        console.log(s);
+
+        var stus = [{
+                username: '刘林',
+                age: 18,
+                gender: '男士',
+                tel:'18989876568'
+            },
+            {
+                username: '周政宇',
+                age: 18,
+                gender: '先生'
+            }
+        ];
+        for(var s of stus){
+            var str = showstu(s);
+            console.log(str);
+        }
+    </script>
+</body>
+
+</html>

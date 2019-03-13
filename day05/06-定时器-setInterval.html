@@ -16,7 +16,7 @@
     </ul>
     <script>
         var  li = document.querySelectorAll('li');
-        setInterval(function(){
+        var sadadadadsid = setInterval(function(){
             console.log(new Date());
             var d = new Date();
             //把小时放到第一个li里面
@@ -24,6 +24,7 @@
             li[2].innerHTML = d.getMinutes();
             li[4].innerHTML = d.getSeconds();
         }, 1000);
+        clearInterval(sadadadadsid);
     </script>
 </body>
 </html>

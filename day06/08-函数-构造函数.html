@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>构造函数</title>
+</head>
+<body>
+    <script>
+        function Person(username1, gender1, age1){
+            this.username = username1;
+            this.gender = gender1;
+            this.age = age1;
+
+            this.say = function(){
+                return '我是' + this.username + '，性别'+this.gender+'，今年'+this.age+'岁了';
+            }
+        }
+
+        // Array.isArray();   Person.learn()
+        // 使用构造函数创建  实例对象
+        var p1 = new Person('胡友作', '女', 20);
+        console.log(p1.age);
+        console.log(p1.say());
+        // 构造函数之上增加新的方法
+        Person.prototype.learn = function(course){
+            return '我是'+this.username+'，我在学习'+course+'课程';
+        }
+        console.log(p1.learn('JS'));
+    </script>
+</body>
+</html>
