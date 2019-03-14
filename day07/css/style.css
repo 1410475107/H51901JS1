@@ -22,3 +22,10 @@ ul.point li{
     display: inline-block;
     cursor: pointer;
 }
+/* ul.point li:first-of-type{
+    background-color: #f01;
+} */
+.round2 ul.img>li{
+    background-color: rgb(199, 194, 194);
+    color: aliceblue;
+}

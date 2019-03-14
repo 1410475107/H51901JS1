@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
     <div class="round1">
         <ul class="img">
             <li><img src="./img/1.jpg"></li>
@@ -28,10 +27,15 @@
         </ul>
     </div>
 
-
     <div class="round2">
         <ul class="img">
-            <li><img src="./img/1.jpg"></li>
+            <li>
+                <ul>
+                    <li><img src="./img/2.jpg" width="590" height="420"></li>
+                    <li style="height:50px;">图片信息描述</li>
+                </ul>
+
+            </li>
             <li><img src="./img/2.jpg"></li>
             <li><img src="./img/3.jpg"></li>
             <li><img src="./img/4.jpg"></li>
@@ -49,8 +53,9 @@
 
 <script src="./js/round.js"></script>
 <script>
-    new Round('.round1');
-    new Round('.round2');
+    // new Date().getFullYear();
+    new h51901.Round('.round1', 3000).autoplay();
+    new h51901.Round('.round2', 800).autoplay();
 </script>
 </body>
 
