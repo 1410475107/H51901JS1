@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面试题和知识点复习</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .answer p{display: none}
+        .answer:hover p{display: block;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>分析下面的JavaScript，的输出是多少？</h3>
+        <pre>
+            var obj1    = new Object();
+            obj1.name   = 'zjzhome';
+            var obj2    = obj1;
+            console.log(obj2.name); 
+            obj1.name   = 'zjz';
+            console.log(obj2.name);
+            <div class="answer">试题解析：
+
+
+
+
+
+
+            <p>
+            用=把一个对象赋值给另一个对象，是指地址引用；
+            </p>
+            </div>
+        </pre>
+    </div>
+    <script>
+         var obj1    = new Object();
+            obj1.name   = 'zjzhome';
+            var obj2    = obj1;
+            console.log(obj2.name); 
+            obj1.name   = 'zjz';
+            console.log(obj2.name);
+    </script>
+</body>
+</html>

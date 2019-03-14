@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面试题和知识点复习</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .answer p{display: none}
+        .answer:hover p{display: block;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>分析下面的JavaScript，的输出是多少？</h3>
+        <pre>
+            function changeObjectProperty (o) {
+                o.siteUrl = "http://www.csser.com/";
+                o = new Object();    
+                o.siteUrl = "http://www.popcg.com/"; 
+            }
+            var CSSer = new Object();  
+            changeObjectProperty(CSSer);
+            console.log(CSSer.siteUrl); 
+            
+            <div class="answer">试题解析：
+            <p>
+            声明一个对象时，相当于创建了一个新的空间；
+            使用==判断两个对象是否相等，是对引用的判断，而不是属性和值的对比；
+            如果只是值对比，需要循环操作对比每一个属性值；
+            </p>
+            </div>
+        </pre>
+    </div>
+    <script>
+    </script>
+</body>
+</html>

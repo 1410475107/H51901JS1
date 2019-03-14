@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面试题和知识点复习</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .answer p{display: none}
+        .answer:hover p{display: block;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>会输出什么？</h3>
+        <pre>
+            var  fn1 = 'ivan';
+            var  name ='good';
+            var fn1 = function(y){
+                y();
+            } 
+            function fn1(x){        
+                x(name);  
+            }
+
+            function fn2(x){
+                console.log(x);
+                console.log(name);
+                var name = 'hello';
+                console.log(name);
+            }
+
+            fn1(fn2);
+
+
+
+
+
+
+
+            
+            <div class="answer">试题解析：
+            <p>
+            变量的提升只提升声明，不提升赋值；
+            函数作为一种声明，也会提升到前面；
+            JS解释器在执行代码的时候，会把所有的声明提升到最前面；
+            函数内部的声明，在执行函数的时候，会提示到函数内部的最前面；
+            </p>
+            </div>
+        </pre>
+    </div>
+    <script>
+           
+
+
+    </script>
+</body>
+</html>

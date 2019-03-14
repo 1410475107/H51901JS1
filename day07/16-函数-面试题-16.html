@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面试题和知识点复习</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .answer p{display: none}
+        .answer:hover p{display: block;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>三行a,b,c的输出分别是什么？</h3>
+        <pre>
+            function fun(n,o) {
+                console.log(o)
+                return {
+                    fun:function(m){
+                        return fun(m,n);
+                    }
+                };
+            }
+            var a = fun(0);  a.fun(1);  a.fun(2);  a.fun(3);
+            var b = fun(0).fun(1).fun(2).fun(3);
+            var c = fun(0).fun(1);  c.fun(2);  c.fun(3);
+            试题解析：
+            引用在，空间不灭；
+            空间共享；
+            
+            a = fun(0); -> 调用函数传参：实参比形参少，多余的为undefined。  n = 0  o = undefined  ->     
+                         console.log(o) 输出'undefined'  ->                                 
+                         a 存放 fun函数返回的对象{ fun:func...} -> a保留了一快照（闭包：保留前面运行现场信息）
+            a.fun(1);   -> 调用快照的对象里的方法fun:function(m) ->  
+                         方法里调用外面函数function fun(n,o) , 传参 n=1, o = 0( o为快照里n=0)  注：因闭包能驻留（信息保持）->
+                         console.log(o)输出0
+            a.fun(2);   -> 调用同一快照 传参 n=2, o = 0( o为快照里n=0)   
+            a.fun(3);   -> 调用同一快照 传参 n=2, o = 0( o为快照里n=0)    
+
+            b = fun(0).fun(1).fun(2).fun(3);  -> 链式调用中信息一直保持（后一步用前一步的现场）
+                fun(0)         ->           n = 0  o = undefined          -> console.log(o)输出 undefined
+                fun(0) .fun(1) ->           n=1, o = 0( 为前面保留的n=0)  -> console.log(o)输出 0
+                fun(0) .fun(1).fun(2) ->    n=2, o = 1( 为前面保留的n=1)  -> console.log(o)输出 1      
+                fun(0).fun(1).fun(2).fun(3) n=3, o = 2( 为前面保留的n=2)  -> console.log(o)输出 2 
+
+            c = fun(0).fun(1);  输出 undefined 0   c保留的快照现场：n=1, o = 0 ，            
+            c.fun(2);  -> 调用快照的对象里的方法fun:function(m) ->  
+                         方法里调用外面函数function fun(n,o) , 传参 n=1, o = 1( o为快照里n=1)  
+                         console.log(o)输出1  
+            c.fun(3);  -> 调用同一快照 传参 n=3, o = 1( o为快照里n=1) -> console.log(o)输出1  
+        </pre>
+    </div>
+    <script>
+        // 代码
+        function fun(n,o) {
+          console.log(o)
+          return {
+            fun:function(m){
+              return fun(m,n);
+            }
+          };
+        }
+        var a = fun(0);  a.fun(1);  a.fun(2);  a.fun(3);
+        var b = fun(0).fun(1).fun(2).fun(3);
+        var c = fun(0).fun(1);  c.fun(2);  c.fun(3);
+        /*解析
+        a = fun(0); -> 调用函数传参：实参比形参少，多余的为undefined。  n = 0  o = undefined  ->     
+                     console.log(o) 输出'undefined'  ->                                 
+                     a 存放 fun函数返回的对象{ fun:func...} -> a保留了一快照（闭包：保留前面运行现场信息）
+        a.fun(1);   -> 调用快照的对象里的方法fun:function(m) ->  
+                     方法里调用外面函数function fun(n,o) , 传参 n=1, o = 0( o为快照里n=0)  注：因闭包能驻留（信息保持）->
+                     console.log(o)输出0
+        a.fun(2);   -> 调用同一快照 传参 n=2, o = 0( o为快照里n=0)   
+        a.fun(3);   -> 调用同一快照 传参 n=2, o = 0( o为快照里n=0)    
+
+        b = fun(0).fun(1).fun(2).fun(3);  -> 链式调用中信息一直保持（后一步用前一步的现场）
+            fun(0)         ->           n = 0  o = undefined          -> console.log(o)输出 undefined
+            fun(0) .fun(1) ->           n=1, o = 0( 为前面保留的n=0)  -> console.log(o)输出 0
+            fun(0) .fun(1).fun(2) ->    n=2, o = 1( 为前面保留的n=1)  -> console.log(o)输出 1      
+            fun(0).fun(1).fun(2).fun(3) n=3, o = 2( 为前面保留的n=2)  -> console.log(o)输出 2 
+
+        c = fun(0).fun(1);  输出 undefined 0   c保留的快照现场：n=1, o = 0 ，            
+        c.fun(2);  -> 调用快照的对象里的方法fun:function(m) ->  
+                     方法里调用外面函数function fun(n,o) , 传参 n=1, o = 1( o为快照里n=1)  
+                     console.log(o)输出1  
+        c.fun(3);  -> 调用同一快照 传参 n=3, o = 1( o为快照里n=1) -> console.log(o)输出1  
+                     
+        */     
+
+    </script>
+</body>
+</html>

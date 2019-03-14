@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面试题和知识点复习</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .answer p{display: none}
+        .answer:hover p{display: block;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>会输出什么？</h3>
+        <pre>
+            var num=5;
+            function func1(){
+                 var num=3;
+                 var age =4;
+                 function func2(){
+                     console.log(num);
+                     var num ='ivan';
+                     function func3(){
+                       age =6;  
+                     }
+                     func3();
+                     console.log(num);
+                     console.log(age);
+                }
+                func2();
+            }
+            func1(); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+            <div class="answer">试题解析：
+            <p>
+            循环体只有一个语句，大括号是可以省略的；
+            循环什么时间结束：判断条件返回false的时候循环结束；
+            </p>
+            </div>
+        </pre>
+    </div>
+    <script>
+       
+    </script>
+</body>
+</html>

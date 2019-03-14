@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>面试题和知识点复习</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .answer p {
+            display: none
+        }
+
+        .answer:hover p {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3>输出结果是？</h3>
+        <pre>
+            var f = true;
+            if (f === true) {
+                var a = 10;
+            }
+
+            function fn() {
+                var b = 20;
+                c = 30;
+            }
+            fn();
+            console.log(a);
+            console.log(b);
+            console.log(c);
+            <div class="answer">试题解析：
+            <p>
+            试题解析：
+            函数内部用var声明的变量是局部变量，外面不可以使用；
+            函数内部没有用var声明，直接赋值的变量是全局变量；
+            代码里面使用一个没有声明的变量会报错；
+            </p>
+            </div>
+        </pre>
+    </div>
+    <script>
+        var f = true;
+        if (f === true) {
+            var a = 10;
+        }
+        function fn() {
+            var b = 20;
+            c = 30;
+        }
+        fn();
+        console.log(a); //10
+        console.log(c); //30
+        console.log(b); // 报错
+        ;
+    </script>
+</body>
+
+</html>

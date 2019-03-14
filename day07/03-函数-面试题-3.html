@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面试题和知识点复习</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .answer p{display: none}
+        .answer:hover p{display: block;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>分析下面的JavaScript，的输出是多少？</h3>
+        <pre>
+            var x = 1;
+            function ScopeTest(){
+                console.log(x); 
+                var x = 'hello world';
+                console.log(x);
+            }
+            ScopeTest(); 
+            <div class="answer">试题解析：
+
+
+
+
+
+                
+            <p>
+            试题解析：
+            变量提升只提升声明，不提升赋值；
+            在函数内部，局部变量优先级高于全局变量；
+            函数有自己的作用域对象，寻找需要的变量，找到就结束寻找；
+            </p>
+            </div>
+        </pre>
+    </div>
+    <script>
+       
+    </script>
+</body>
+</html>

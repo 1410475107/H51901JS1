@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面试题和知识点复习</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .answer p{display: none}
+        .answer:hover p{display: block;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>会输出什么？</h3>
+        <pre>
+            (function(){
+                var a = 3, b = 3;  ====>  var a = 3; var b = 3;
+
+                var a = b = 3      ====>   var a = b;   b=3;
+            })();
+             
+            console.log("a defined? " + (typeof a !== 'undefined'));
+            console.log("b defined? " + (typeof b !== 'undefined'));
+            console.log(b);
+            console.log(typeof a);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="answer">试题解析：
+            <p>
+            typeof 如果用于运算一个没有声明的变量，返回undefined；
+            typeof 的返回值是string是类型；
+            var a=b=3;相当于：b=3; var a = b;
+            var a=3, b=3;相当于是var a=3;  var b=3;
+            </p>
+            </div>
+        </pre>
+    </div>
+    <script>
+       (function(){
+
+                var a = b = 3;
+            console.log(a, b);
+
+            })();
+            console.log("a defined? " + (typeof a !== 'undefined'));
+            console.log("b defined? " + (typeof b !== 'undefined'));
+            console.log(typeof b);
+            console.log(typeof a);
+            
+    </script>
+</body>
+</html>

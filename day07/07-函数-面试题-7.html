@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面试题和知识点复习</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .answer p{display: none}
+        .answer:hover p{display: block;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>分析下面的JavaScript，的输出是多少？</h3>
+        <pre>
+            var x=8;
+            var objA = {
+                x:'good',
+                y:32
+            }
+
+            function add(x,y){
+                console.log(x.y+y);
+            }
+
+            function fn(x,y){
+                x.y=5;
+                y(x,3);
+            }
+            fn(objA,add);
+            console.log(objA);
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+    
+            <div class="answer">试题解析：
+            <p>
+            函数可以作为实参传递；
+            对象的元素访问方式有两种：
+                obj.y：y直接当成一个值，也就是'y'；
+                obj['y']；
+                这两种方式这时访问的是对象的同一个属性；
+                如果写成obj[y]，会把y当成一个变量来解析；
+                </p>
+            </div>
+        </pre>
+    </div>
+    <script>
+       
+
+    </script>
+</body>
+</html>

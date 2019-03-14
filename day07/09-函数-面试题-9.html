@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面试题和知识点复习</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .answer p{display: none}
+        .answer:hover p{display: block;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>写一个按照下面方式调用都能正常工作的 sum 函数？</h3>
+        <pre>
+            console.log(sum(2,3));  //5
+            console.log(sum(2)(3));  // 5
+
+            function sum(a,b){
+                if(b === undefined){
+                    return function(n){
+                        return a+n;
+                    }
+                }
+                return a+b;
+            }
+
+            <div class="answer">试题解析：
+            <p>
+
+            </p>
+            </div>
+
+        </pre>
+    </div>
+    <script>
+        console.log(sum(2,3));  //5
+        console.log(sum(2)(3)); //5
+        function sum(a,b){
+            if(arguments.length == 2){
+                return a + b;
+            }
+            //非正常
+            return function(n){
+                return n + a;
+            };
+        }
+    </script>
+</body>
+</html>

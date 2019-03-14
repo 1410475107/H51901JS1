@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面试题和知识点复习</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .answer p{display: none}
+        .answer:hover p{display: block;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>会输出什么？</h3>
+        <pre>
+            var buttons = [{name:'b1'},{name:'b2'},{name:'b3'}];
+            function bind(){
+                for (var i = 0; i < buttons.length; i++) {
+                   buttons[i].onclick = function() {
+                       console.log(i);
+                   }
+                }
+            };
+            bind();
+            buttons[0].onclick();
+            buttons[1].onclick();
+            buttons[2].onclick();
+            <div class="answer">试题解析：
+            <p>
+            共享bind空间里面的i;
+            在bind空间里面，i是全局变量；
+            整个循环执行完成后，i的值是3；
+            </p>
+            </div>
+        </pre>
+    </div>
+    <script>
+        // 代码
+        var buttons = [{name:'b1'},{name:'b2'},{name:'b3'}];
+        function bind(){
+            for (var i = 0; i < buttons.length; i++) {
+                // buttons[i].i = i;
+                buttons[i].onclick = function() {
+                   console.log(i);
+                   // console.log(this.i);
+                }
+            }
+        };
+        bind();
+        buttons[0].onclick();
+        buttons[1].onclick();
+        buttons[2].onclick();
+
+    </script>
+</body>
+</html>
