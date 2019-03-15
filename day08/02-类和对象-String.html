@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>String</title>
+</head>
+<body>
+    <script>
+        var str = '这里是一个字符串，华清远见，hqyj';
+        console.log(str.charAt(0));
+        console.log(str.charAt(3));
+        // 实现字符串的连接
+        console.log(str.concat('我是连接上来的', '-1-2'));
+
+        console.log(str.replace('hqyj', '<b>华清远见</b>'));
+
+
+        console.log(str.substr(2, 5));
+        console.log(str.substring(2, 7));
+        console.log(str.slice(2, 7));
+
+        // 实现字符串的首字母大写  去除多余的空格
+        var str1 = '随便     一个 字符串 zimu   hqyj   chengDu   javaScript     实现首字母大写';
+        function  firstUpper(str){
+            // 找到字符串里面所有的词语
+            var words = str.split(' ');
+            console.log(words);
+            // 首字母大写
+            var w = [];
+            for (var n in words) {
+                // 如果时空就不要了
+                if(words[n]){
+                    w.push(words[n].charAt(0).toUpperCase()+words[n].substring(1).toLowerCase());
+                }
+            }
+            // 使用空格把元素连接起来
+            return w.join(' ');
+        }
+        var string = firstUpper(str1);
+        console.log(string);
+    </script>
+</body>
+</html>

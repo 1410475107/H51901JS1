@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>字符类</title>
+</head>
+<body>
+    <script>
+        var str = '华清远见是一个培训机构，网站是hqyj.com';
+        var p = /[华见远清hyadasda]/g;
+        console.log(str.match(p));
+
+        // \d的使用
+        var  str1 = '今天的苹果8元一斤，买了5斤，总共花了40元';
+        var  p1 = /[\d]/g;
+        console.log(str1.match(p1));
+
+    </script>
+</body>
+</html>

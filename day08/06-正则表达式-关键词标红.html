@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>关键词标红</title>
+    <style>.kw{background-color: rgb(255, 255, 0); color: red;}</style>
+</head>
+<body>
+    <input type="text" name="keywords" value="123"> 
+    <input type="button" value="搜索">
+    <div>
+        近日，教育部高等教育司发布了《关于公布有关企业支持的2018年第二批产学合作协同育人项目立顶名单的函》，华清远见教育集团申报的教学内容和课程体系改革、师资培训、实践条件和实践基地建设、新工科建设、创新创业教育改革五大项目经过教育部产学合作协同育人专家审议，最终全部通过教育部评审，其中近150个项目成功获得教育部审批立顶。截至目前，在2018年“产学合作协同育人”项目中，华清远见共有400余个项目获得审批。
+    </div>
+    <script>
+        // 拿到要处理的内容
+        var content=document.querySelector('div').innerText;
+        document.querySelector('input[type="button"]').onclick = function () {
+            // 接收用户输入的关键词
+            var keywords = document.querySelector('input[name="keywords"]').value;
+            // 根据用户输入的关键词创建正则表达式
+            var pattern = new RegExp(keywords, 'ig');
+            document.querySelector('div').innerHTML = content.replace(pattern, `<span class="kw">${keywords}</span>`);
+        }
+    </script>
+</body>
+</html>

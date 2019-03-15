@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则表达式基本概念</title>
+</head>
+<body>
+    <script>
+        // 定义正则表达式
+        var p0 = /hqyj/;
+        // 使用RegExp对象定义正则表达式
+        var p1 = new RegExp('hqyj');
+        var r = 'hqyj';
+        var p2 = new RegExp(r); //会解析变量  r
+        var p3 = /r/;  //就是匹配字面量  r，并不会解析成变量  r
+
+
+        var str = '华清远见，官方网站是 hqyj.com，这个网站今年刚改版HQYJ';
+        var mr = str.match(p0);
+        console.log(mr);
+
+        var p4 = /网站/ig;
+        console.log(str.match(p4));
+
+        // 使用RegExp来创建正则表达式
+        var p5 = new RegExp('hqyj', 'ig');
+        console.log(str.match(p5));
+
+    </script>
+</body>
+</html>

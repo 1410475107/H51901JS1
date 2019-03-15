@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则表达式的方法</title>
+</head>
+<body>
+    <script>
+        // 定义一个正则表达式
+        var keywords = '星期';
+        var r = new RegExp(keywords, 'g');
+
+        var str = '今天是星期几？星期五';
+        // 使用的是正则表达式对象的方法
+        var result = r.exec(str);
+        console.log(result);
+
+        //不断的往下匹配
+        var result1 = r.exec(str);
+        console.log(result1);
+
+        //没有匹配到返回 null
+        var result2 = r.exec(str);
+        console.log(result2);
+
+        //对字符串的内容进行检查
+        var r2 = r.test(str);
+        console.log(r2);
+
+        var str1 = '今天是3,15消费者日';
+        var r3 = r.test(str1);
+        console.log(r3);
+    </script>
+</body>
+</html>

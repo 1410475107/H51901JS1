@@ -54,7 +54,10 @@
 <script src="./js/round.js"></script>
 <script>
     // new Date().getFullYear();
-    new h51901.Round('.round1', 3000).autoplay();
+    var r1 = new h51901.Round('.round1');
+    r1.speed = 2000;
+    r1.autoplay();
+    console.log(r1);
     new h51901.Round('.round2', 800).autoplay();
 </script>
 </body>

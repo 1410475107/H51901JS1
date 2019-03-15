@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>日期时间类</title>
+</head>
+<body>
+    <script>
+        var d = new Date();
+        console.log(d.getFullYear() + '-' + (d.getMonth()+1) + '-' + d.getDate());
+
+        console.log(d.toLocaleString());
+
+        console.log(d.valueOf());//1970-01-01 00:00:00  单位是毫秒
+    </script>
+</body>
+</html>

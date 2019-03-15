@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选择和分组</title>
+</head>
+<body>
+    <script>
+        var  str = '你好     zimu,  English   字符,    串分割';
+        var  p = /\s{1,}|\s*,\s*/; //根据空格或者逗号分割字符串
+        var arr = str.split(p);
+        console.log(arr);
+        
+        // 小括号表示分组
+        var p1 = /(你好)|(字符)/g;
+        console.log(str.match(p1));
+        </script>
+</body>
+</html>

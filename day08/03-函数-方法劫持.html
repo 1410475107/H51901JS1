@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>方法劫持</title>
+</head>
+<body>
+    <script>
+        var a = Math.max(1,2,4,5);    
+        console.log(a);
+        // 求数组的最大值
+        var arr = [1,2,3,4,56,9];
+        var m = Math.max.apply(arr, arr);
+        console.log(m);
+        // 求和函数
+        function  sum(){
+            var t = 0;
+            // arguments = [1,2,3,4,5];
+            for(var n of arguments){
+                t += n;
+            }
+            console.log(this);
+            return t;
+        }
+        var t = sum(1, 3,  6);
+        console.log(t);
+        // 把方法劫持过来，用在指定的对象之上
+        var arr1 = [1,2,3,4,5];
+        var t1 = sum.apply(arr1, arr1);
+        console.log(t1);
+        // 使用call实现方法劫持  可以实现继承
+        function Person(username, age){
+            this.username = username;
+            this.age= age;
+            this.say = function(){
+                console.log(this);
+                console.log(`我是${this.username}，几年${this.age}岁了`);
+            }
+        }
+
+        var p1 = new Person('刘秋月', 20);
+        p1.say();
+        // 定义一个新的构造函数
+        function Teacher(username, course, age){
+            // 把方法劫持过来，用在当前对象
+            Person.call(this, username, age);
+            this.course = course;
+            this.mycourse = function(){
+                console.log(`我是${this.username}，我上的课是${this.course}`);
+            }
+        }
+        var  t1 = new Teacher('司水花', 'JS2', 28);
+        t1.say();
+        // bind   call  apply  this  差异
+    </script>
+</body>
+</html>
