@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>断言</title>
+</head>
+<body>
+    <input type="text" name="passwd" value="">
+    <span>*要包含字母、数字、特殊符号，长度6~16</span>
+    <input type="button" value="提交">
+    <script>
+        var str = '有一个帅哥，叫朱开猛,dasdad是个学生';
+        var user = /朱开猛(?=.*学生)/;
+        console.log(str.match(user));
+
+        // 密码验证
+        document.querySelector('input[type="button"]').onclick = function(){
+            //接收用户输入的数据
+            var passwd = document.querySelector('input[name="passwd"]').value;
+            var p_reg = /(?=.*\d+)(?=.*\W+)(?=.*[a-zA-Z]+).{6,16}/;
+            if(p_reg.test(passwd)){
+                alert('success');
+            }else{
+                alert('fail');
+            }
+        }
+
+
+    </script>
+</body>
+</html>

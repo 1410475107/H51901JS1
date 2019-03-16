@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>作用域的问题</title>
+</head>
+<body>
+    <script>
+        let a = 10;
+        
+        function sum(){
+            let a = 0;
+            console.log(a);
+        }
+
+        sum();
+        console.log(a);
+
+
+        {
+            var c  =0 ;
+            let d = 9;  //作用域限制在代码块内部
+            console.log(d);
+        }
+        console.log(c);
+        // console.log(d); ///Uncaught ReferenceError: d is not defined
+
+
+        // for(var n=0; n < 5; n++){
+        //     setTimeout(function(){
+        //         console.log(n);
+        //     }, 1000);
+        // }
+        // 使用let声明变量，具备块级作用域的特性
+        let button = [{},{},{}];
+        for(let n=0; n < 3; n++){
+            button[n].onclick = function(){
+                console.log(n);
+            }
+        }
+        
+        button[0].onclick();
+        button[1].onclick();
+        button[2].onclick();
+        console.log(n);
+
+    </script>
+</body>
+</html>

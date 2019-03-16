@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>常量</title>
+</head>
+<body>
+    <script>
+        const a = 10;
+
+        // a = 20; //常量是不能修改的,所以在声明常量的时候赋值好
+        console.log(a);
+
+        // 对象里面的属性是可以修改的
+        const obj = {username:'马祯', age:20};
+        obj.username = '薛倩';
+        obj.gender = '女';
+        // obj = {}; //会报错
+        console.log(obj.username);        
+        console.log(obj.gender);        
+        </script>
+</body>
+</html>

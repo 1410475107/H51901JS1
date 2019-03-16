@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>箭头函数</title>
+</head>
+<body>
+    <script>
+        let fn = ()=> new Date();
+        console.log(fn());
+
+        let sum = (a, b)=>a+b;
+        console.log(sum(1,2));
+
+        let arr = [1,2,3];
+        // arr.map(function(a){return a*a;});
+        arr = arr.map((a)=>a*a);
+        console.log(arr);
+
+        let cal = (a, b)=>{
+
+            return {
+                sum1:a+b,
+                sub:a-b,
+                mul:a*b,
+                div:a/b
+            }
+        }
+        let {sum1, sub, mul, div} = cal(2,3);
+        console.log(sum1, sub, mul, div);
+    </script>
+</body>
+</html>

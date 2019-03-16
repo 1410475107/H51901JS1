@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>解构赋值</title>
+</head>
+<body>
+    <script>
+        // 数组的解构赋值
+        let [a, b,,c, f, fn] = [1,2,3,4,{username:'邢隽'}, function(){}];
+        console.log(a, b, c, f, fn);
+
+        // 变量的值进行对换
+        let a1 = 8, b1 = 9;
+        console.log(a1, b1);
+        [a1, b1] = [b1, a1];
+        console.log(a1, b1);
+
+        </script>
+</body>
+</html>

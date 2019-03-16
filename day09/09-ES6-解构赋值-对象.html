@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象的解构赋值</title>
+</head>
+<body>
+    <script>
+            let {a, b, e, f, g} = {f:function(){}, b:2, a:1, h:90};
+            console.log(a, b, e, f, g);
+
+            let {a1, b1=0} = {a1:1, c:2, b1:100};
+            console.log(a1, b1);
+
+            let [obj, [{n, m='a'}]] = [{a:1}, [{n:90, m:90}]];
+            console.log(n, m);
+
+            //函数可以返回  只能一个  ：{}
+            function sum(a,b){
+                return {
+                    r2:a-b,
+                    r1:a+b
+                }
+            }
+            let {r1, r2} = sum(1,2);
+            console.log(r1, r2);
+
+            //函数的参数问题 
+            function stu({username, age}){
+                return `我是${username}，今年${age}岁了`;
+            }
+            let info = stu({username:'张靖麟', age:20});
+            console.log(info);
+
+            let info1 = stu({gender:' 帅哥', age:22,username:'朱开猛'});
+            console.log(info1);
+
+        </script>
+</body>
+</html>
