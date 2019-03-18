@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>使用class定义类</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+    <div class="round1">
+        <ul class="img">
+            <li><img src="./img/1.jpg"></li>
+            <li><img src="./img/2.jpg"></li>
+            <li><img src="./img/3.jpg"></li>
+            <li><img src="./img/4.jpg"></li>
+            <li><img src="./img/5.jpg"></li>
+        </ul>
+        <ul class="point">
+            <li></li>
+            <li>2</li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <div class="round2">
+        <ul class="img">
+            <li>
+                <ul>
+                    <li><img src="./img/2.jpg" width="590" height="420"></li>
+                    <li style="height:50px;">图片信息描述</li>
+                </ul>
+
+            </li>
+            <li><img src="./img/2.jpg"></li>
+            <li><img src="./img/3.jpg"></li>
+            <li><img src="./img/4.jpg"></li>
+            <li><img src="./img/5.jpg"></li>
+        </ul>
+        <ul class="point">
+            <li></li>
+            <li>2</li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script src="./class/round.class.js"></script>
+    <script>
+        // var Round = 100;
+        //function  var  let  
+        class Person {
+            constructor(username, age) {
+                this.uname = username;
+                this.age = age;
+            }
+            say() {
+                console.log(`我是${this.uname}`);
+            }
+            course(c) {
+                console.log(`我是${this.uname}，我在学习${c}`);
+            }
+        }
+        let p1 = new Person('李庆发', 20);
+        console.log(p1);
+        p1.say();
+        p1.course('Go');
+
+        // 我们的轮播图
+        new Round('.round1').autoplay();
+        new Round('.round2');
+    </script>
+</body>
+
+</html>

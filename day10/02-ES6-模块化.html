@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>数字转成字符串</title>
+    <title>模块化</title>
 </head>
 <body>
-    <script>
-        var a = 90;
-        console.log(typeof (a+''));  //string    
-        console.log(typeof a.toString());
-        console.log(new String(a));//object
-
+    <!-- <script src="./js/myModule.js"></script> -->
+    <script type="module">
+        import student from './js/myModule.js'; 
+        console.log(student);
     </script>
 </body>
 </html>

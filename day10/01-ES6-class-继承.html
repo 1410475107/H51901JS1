@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实现继承</title>
+</head>
+<body>
+    <script>
+        // 父级类
+        class Person{
+            constructor(username, age){
+                this.name = username;
+                this.age = age;
+            }
+            run(){
+                console.log(`${this.name}在跑步`);
+            }
+        }
+        // 定义一个新的类  子类
+        class Teacher extends Person{
+            constructor(username, age, major){
+                // this.name = username;
+                // this.age = age;
+                super(username, age);  //需要显示的调用一次
+                this.major = major;
+            }
+            run(){
+                console.log(`${this.name}是一位老师，在跑步`);
+            }
+        }
+
+        let t1 = new Teacher('陶老师', 28, '移动');
+        t1.run();
+
+        class Students extends Person{
+            constructor(username, age, major){
+                // this.name = username;
+                // this.age = age;
+                super(username, age);
+                this.major = major;
+            }
+            run(){
+                console.log(`${this.name}在跑步`);
+            }
+        }
+        </script>
+</body>
+</html>

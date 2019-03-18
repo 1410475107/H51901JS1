@@ -80,6 +80,7 @@
             // 放歌词的div元素提前获取好
             var div = document.querySelector('div'); 
             for(var l of arr){
+                console.log(new Date().valueOf());//循环是需要时间的
                 var r = p.exec(l);
                 if(!r) continue;
                 //使用定时器
