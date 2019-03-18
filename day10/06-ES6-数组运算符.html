@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组运算符</title>
+</head>
+
+<body>
+    <script>
+        let arr1 = [1, 2, 3];
+        let arr2 = arr1;
+        arr1.pop();
+        console.log(arr2);
+
+
+        // 更多的时候，我们想的是 两个数组是独立的：直接就是数组的复制
+        let arr3 = [4, 5, 6];
+        console.log(...arr3); //4,5,6
+        let arr4 = [...arr3];
+        arr3.shift();
+        console.log(arr4);
+
+        let arr5 = [1, 2];
+        let arr6 = [3, 4];
+        let arr7 = [5, 6];
+        let arr8 = [...arr5, ...arr6, ...arr7];
+        console.log(arr8);
+
+
+        function sum(){
+            console.log(arguments);//类数组
+            console.log([...arguments]);//类数组
+        }
+        sum(1,2,3,4,5,6);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数</title>
+</head>
+<body>
+    <script>
+        // 箭头函数没有arguments
+            let fn = (...reset123)=>{
+                console.log(reset123);
+            }
+            fn(1,2,34); //1,2,34
+
+            let fn1 = (a,b,...resetabc)=>{
+                console.log(resetabc);
+
+            }
+            fn1(1,2,34);
+            console.log(fn1.length);//length里面不包含reset参数
+        </script>
+</body>
+</html>
